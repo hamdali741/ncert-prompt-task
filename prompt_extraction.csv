@@ -1,0 +1,28 @@
+filename,content
+prompt_extraction.py,"# Python code to convert JSON to Excel
+import json
+import pandas as pd
+
+def json_to_excel(json_file, excel_file):
+    with open(json_file, 'r') as f:
+        data = json.load(f)
+
+    rows = []
+    for topic in data['topics']:
+        topic_title = topic['topic_title']
+        for sub in topic['sub_topics']:
+            rows.append({
+                'Chapter': data['chapter_title'],
+                'Topic': topic_title,
+                'Sub-topic': sub['sub_topic_title'],
+                'Paragraphs': len(sub['paragraphs']),
+                'Activities': len(sub['activities']),
+                'Images': len(sub['diagrams']),
+                'Tables': len(sub['tables']),
+                'Questions': len(sub['questions'])
+            })
+
+    df = pd.DataFrame(rows)
+    df.to_excel(excel_file, index=False)
+    print(""Excel file generated."")
+"

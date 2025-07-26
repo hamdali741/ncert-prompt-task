@@ -1,0 +1,17 @@
+filename,content
+README.md,"# NCERT Prompt Engineering Project
+
+This project is part of a Prompt Engineering and Automation Task to extract structured educational data from Class 8 NCERT Science chapters using AI tools such as Google Gemini and Python.
+
+## Objective
+- Extract content from NCERT Science textbook chapters.
+- Store in JSON & Excel.
+- Generate a study planner.
+
+## Files
+- prompt_extraction.py
+- chapter-extract.json
+- science-output.xlsx
+- study-planner.pdf
+- README.md
+"
